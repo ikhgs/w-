@@ -1,16 +1,13 @@
 import os
-
-
 import openai
 
-
+# Définissez directement votre clé API ici
 OPENAI_API_KEY ='sk-proj-dku33dCFA4CRNwVUkjRsT3BlbkFJfZWrgeJenYTzNSiNo2Xn'
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = OPENAI_API_KEY
 
-
-def text_complition(prompt: str) -> dict:
+def text_completion(prompt: str) -> dict:
     '''
-    Call Openai API for text completion
+    Call OpenAI API for text completion
 
     Parameters:
         - prompt: user query (str)
@@ -38,4 +35,11 @@ def text_complition(prompt: str) -> dict:
             'status': 0,
             'response': ''
         }
+
+# Exemple d'utilisation
+result = text_completion('Quel temps fait-il aujourd\'hui ?')
+print(result)
+
+
+
         
