@@ -1,21 +1,18 @@
 import os
-
-
 from twilio.rest import Client
 
 TWILIO_ACCOUNT_SID = 'ACb1e27aa70ecc3659544b58a8a3450afa'
 TWILIO_AUTH_TOKEN = 'Tb8064608c257774ee16e0f230d0d81fd'
-account_sid = os.getenv('TWILIO_ACCOUNT_SID')
-auth_token = os.getenv('TWILIO_AUTH_TOKEN')
-client = Client(account_sid, auth_token)
+FROM_PHONE_NUMBER = '+14155238886'
 
+client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 def send_message(to: str, message: str) -> None:
     '''
     Send message to a Telegram user.
 
     Parameters:
-        - to(str): sender whatsapp number in this whatsapp:+919558515995 form
+        - to(str): recipient phone number in this format: whatsapp:+919558515995
         - message(str): text message to send
 
     Returns:
@@ -23,7 +20,11 @@ def send_message(to: str, message: str) -> None:
     '''
 
     _ = client.messages.create(
-        from_=os.getenv('FROM'),
+        from_=FROM_PHONE_NUMBER,
         body=message,
         to=to
     )
+
+# Exemple d'utilisation
+send_message('whatsapp:+14155238886', 'Hello from Twilio!')
+
