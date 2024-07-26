@@ -2,8 +2,6 @@ import os
 
 
 from twilio.rest import Client
-from dotenv import load_dotenv
-load_dotenv()
 
 TWILIO_ACCOUNT_SID = 'ACb1e27aa70ecc3659544b58a8a3450afa'
 TWILIO_AUTH_TOKEN = 'Tb8064608c257774ee16e0f230d0d81fd'
