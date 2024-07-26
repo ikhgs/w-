@@ -5,9 +5,10 @@ from twilio.rest import Client
 from dotenv import load_dotenv
 load_dotenv()
 
-
-account_sid = os.getenv('ACb1e27aa70ecc3659544b58a8a3450afa')
-auth_token = os.getenv('Tb8064608c257774ee16e0f230d0d81fd')
+TWILIO_ACCOUNT_SID = 'ACb1e27aa70ecc3659544b58a8a3450afa'
+TWILIO_AUTH_TOKEN = 'Tb8064608c257774ee16e0f230d0d81fd'
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 
